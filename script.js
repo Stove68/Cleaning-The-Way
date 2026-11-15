@@ -1027,6 +1027,10 @@ function hideAllPages() {
         "historiePage"
     ).style.display = "none";
 
+    document.getElementById(
+    "farbenPage"
+    ).style.display = "none";
+
 }
 
 document
@@ -1230,6 +1234,48 @@ document
 
             document.getElementById(
                 "historiePage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById("farbenTitel")
+    .addEventListener(
+        "click",
+        function () {
+
+            hideAllPages();
+
+            document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "farbenPage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById(
+        "backFromFarben"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "farbenPage"
             ).style.display = "none";
 
             document.getElementById(
