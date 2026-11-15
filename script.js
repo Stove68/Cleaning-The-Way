@@ -1070,5 +1070,80 @@ document
             document.getElementById(
                 "mainPage"
             ).style.display = "block";
+
         }
 );
+
+// HIER EINFÜGEN
+
+document
+    .getElementById("regelnTitel")
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "regelnPage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById(
+        "backFromRegeln"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "regelnPage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById("zielgruppeTitel")
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "zielgruppePage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById(
+        "backFromZielgruppe"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "zielgruppePage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "block";
+
+        }
+    );
