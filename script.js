@@ -1249,19 +1249,7 @@ document
         "click",
         function () {
 
-            hideAllPages();
-
-            document.getElementById(
-                "menuPanel"
-            ).style.display = "none";
-
-            document.getElementById(
-                "mainPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "farbenPage"
-            ).style.display = "block";
+            alert("Farben wurde angeklickt");
 
         }
     );
