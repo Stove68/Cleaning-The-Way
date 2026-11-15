@@ -1147,3 +1147,44 @@ document
 
         }
     );
+
+
+document
+    .getElementById("historieTitel")
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "historiePage"
+            ).style.display = "block";
+
+        }
+    );
+
+document
+    .getElementById(
+        "backFromHistorie"
+    )
+    .addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "historiePage"
+            ).style.display = "none";
+
+            document.getElementById(
+                "mainPage"
+            ).style.display = "block";
+
+        }
+    );
