@@ -204,66 +204,39 @@ function isSameSegment(
         return false;
     }
 
-    const startDistance =
-        calculateDistance(
-            segmentA[0][0],
-            segmentA[0][1],
-            segmentB[0][0],
-            segmentB[0][1]
-        );
+    let matches = 0;
 
-    const endDistance =
-        calculateDistance(
-            segmentA[
-                segmentA.length - 1
-            ][0],
-            segmentA[
-                segmentA.length - 1
-            ][1],
-            segmentB[
-                segmentB.length - 1
-            ][0],
-            segmentB[
-                segmentB.length - 1
-            ][1]
-        );
+    segmentA.forEach(
+        (pointA) => {
 
-    const reverseStartDistance =
-        calculateDistance(
-            segmentA[0][0],
-            segmentA[0][1],
-            segmentB[
-                segmentB.length - 1
-            ][0],
-            segmentB[
-                segmentB.length - 1
-            ][1]
-        );
+            const found =
+                segmentB.some(
+                    (pointB) =>
 
-    const reverseEndDistance =
-        calculateDistance(
-            segmentA[
-                segmentA.length - 1
-            ][0],
-            segmentA[
-                segmentA.length - 1
-            ][1],
-            segmentB[0][0],
-            segmentB[0][1]
-        );
+                        calculateDistance(
+                            pointA[0],
+                            pointA[1],
+                            pointB[0],
+                            pointB[1]
+                        ) < 0.02
 
-    const forwardMatch =
-        startDistance < 0.05 &&
-        endDistance < 0.05;
+                );
 
-    const reverseMatch =
-        reverseStartDistance < 0.05 &&
-        reverseEndDistance < 0.05;
+            if (found) {
+                matches++;
+            }
+
+        }
+    );
+
+    const matchRatio =
+        matches /
+        segmentA.length;
 
     return (
-        forwardMatch ||
-        reverseMatch
+        matchRatio >= 0.6
     );
+
 }
 function countMatchingSegments(
     segmentsA,
