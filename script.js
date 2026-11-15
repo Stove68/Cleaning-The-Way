@@ -1012,12 +1012,17 @@ document
         function () {
 
             document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
+
+            document.getElementById(
                 "mainPage"
             ).style.display = "none";
 
             document.getElementById(
                 "grundideePage"
             ).style.display = "block";
+
         }
     );
 
@@ -1036,6 +1041,7 @@ document
             document.getElementById(
                 "mainPage"
             ).style.display = "block";
+
         }
     );
 
@@ -1046,12 +1052,17 @@ document
         function () {
 
             document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
+
+            document.getElementById(
                 "mainPage"
             ).style.display = "none";
 
             document.getElementById(
                 "ausruestungPage"
             ).style.display = "block";
+
         }
     );
 
@@ -1072,15 +1083,17 @@ document
             ).style.display = "block";
 
         }
-);
-
-// HIER EINFÜGEN
+    );
 
 document
     .getElementById("regelnTitel")
     .addEventListener(
         "click",
         function () {
+
+            document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
 
             document.getElementById(
                 "mainPage"
@@ -1119,6 +1132,10 @@ document
         function () {
 
             document.getElementById(
+                "menuPanel"
+            ).style.display = "none";
+
+            document.getElementById(
                 "mainPage"
             ).style.display = "none";
 
@@ -1147,7 +1164,6 @@ document
 
         }
     );
-
 
 document
     .getElementById("historieTitel")
