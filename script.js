@@ -1005,12 +1005,38 @@ document
         }
     });
 
+function hideAllPages() {
+
+    document.getElementById(
+        "grundideePage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "regelnPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "zielgruppePage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "ausruestungPage"
+    ).style.display = "none";
+
+    document.getElementById(
+        "historiePage"
+    ).style.display = "none";
+
+}
+
 document
     .getElementById("grundideeTitel")
     .addEventListener(
         "click",
         function () {
 
+            hideAllPages();
+            
             document.getElementById(
                 "menuPanel"
             ).style.display = "none";
@@ -1051,6 +1077,8 @@ document
         "click",
         function () {
 
+            hideAllPages();
+            
             document.getElementById(
                 "menuPanel"
             ).style.display = "none";
@@ -1091,6 +1119,8 @@ document
         "click",
         function () {
 
+            hideAllPages();
+            
             document.getElementById(
                 "menuPanel"
             ).style.display = "none";
@@ -1131,6 +1161,8 @@ document
         "click",
         function () {
 
+            hideAllPages();
+            
             document.getElementById(
                 "menuPanel"
             ).style.display = "none";
@@ -1171,6 +1203,8 @@ document
         "click",
         function () {
 
+            hideAllPages();
+            
             document.getElementById(
                 "menuPanel"
             ).style.display = "none";
