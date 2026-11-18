@@ -756,17 +756,7 @@ savedRoutes.forEach((savedRoute) => {
     );
 
     if (
-        isSameRoute(
-            savedRoute.route,
-            routePoints
-        )
-        ||
-        isNearRoute(
-            savedRoute.route,
-            routePoints
-        )
-        ||
-        overlap > 0.8
+        segmentMatches > 0
     ) {
 
         matchingRoute =
