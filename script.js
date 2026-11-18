@@ -466,7 +466,7 @@ function getRouteLength(points) {
  }
 function splitRouteIntoSegments(
     route,
-    segmentSize = 50
+    segmentSize = 10
 ) {
 
     const segments = [];
@@ -825,7 +825,10 @@ status.innerHTML =
     " / " +
     matchingRoute.segments.length +
     " Segmente";
-
+console.log(
+    "Neue Segmente:",
+    segments.length - updatedSegments
+);
     matchingRoute.cleanCount =
         (matchingRoute.cleanCount || 1) + 1;
 
