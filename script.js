@@ -232,6 +232,10 @@ function isSameSegment(
     const matchRatio =
         matches /
         segmentA.length;
+console.log(
+    "MatchRatio:",
+    matchRatio
+);
 
     return (
         matchRatio >= 0.2
@@ -715,7 +719,20 @@ savedRoutes.forEach((savedRoute) => {
             savedRoute.segments || [],
             segments
         );
+    console.log(
+        "Neue Segmente:",
+        segments.length
+);
 
+    console.log(
+        "Gespeicherte Segmente:",
+        savedRoute.segments.length
+);
+
+    console.log(
+        "SegmentMatches:",
+        segmentMatches
+);
     console.log(
         "Treffer:",
         segmentMatches,
