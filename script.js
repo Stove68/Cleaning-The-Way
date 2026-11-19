@@ -234,7 +234,7 @@ function isSameSegment(
         segmentA.length;
 
     return (
-        matchRatio >= 0.6
+        matchRatio >= 0.2
     );
 
 }
