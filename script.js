@@ -247,29 +247,41 @@ function countMatchingSegments(
     segmentsB
 ) {
 
-    let matches = 0;
+let matches = 0;
 
-    segmentsA.forEach(
-        (segmentA) => {
+segmentsA.forEach(
+    (segmentA) => {
 
-            const foundMatch =
-                segmentsB.some(
-                    (segmentB) =>
+        const foundMatch =
+            segmentsB.some(
+                (segmentB) =>
 
-                        isSameSegment(
-                            segmentA,
-                            segmentB
-                        )
-                );
+                    isSameSegment(
+                        segmentA,
+                        segmentB
+                    )
+            );
 
-            if (foundMatch) {
+        if (foundMatch) {
 
-                matches++;
-            }
+            matches++;
+
+            console.log(
+                "Segment erkannt"
+            );
+
+        } else {
+
+            console.log(
+                "Segment nicht erkannt"
+            );
+
         }
-    );
 
-    return matches;
+    }
+);
+
+return matches;
 }
 function isSameRoute(
     routeA,
