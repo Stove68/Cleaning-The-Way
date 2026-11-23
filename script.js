@@ -36,6 +36,10 @@ let knownPoints =
             "knownPoints"
         )
     ) || [];
+console.log(
+    "Bekannte Punkte geladen:",
+    knownPoints.length
+);
 const status = document.getElementById("status");
 const routeCount = document.getElementById("routeCount");
 const distanceCount = document.getElementById("distanceCount");
@@ -408,7 +412,7 @@ function findKnownPoint(
                 lng,
                 point.lat,
                 point.lng
-            ) <= 0.01
+            ) <= 0.03
     );
 
 }
