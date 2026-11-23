@@ -1008,7 +1008,10 @@ console.log(
     segments.length
 );
 }
-        
+console.log(
+    "Punkte vor dem Speichern:",
+    knownPoints.length
+);        
 localStorage.setItem(
     "tours",
     JSON.stringify(tours)
