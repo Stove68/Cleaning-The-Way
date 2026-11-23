@@ -679,7 +679,10 @@ document.getElementById(
                     }
 
                     routePoints.push([lat, lng]);
-
+console.log(
+    "RoutePoints:",
+    routePoints.length
+);
                     if (routeLine) {
                         map.removeLayer(routeLine);
                     }
