@@ -30,12 +30,20 @@ let savedRoutes =
     JSON.parse(
         localStorage.getItem("savedRoutes")
     ) || [];
+console.log(
+    "Gespeicherte Routen:",
+    savedRoutes.length
+);
+console.log(
+    savedRoutes
+);
 let knownPoints =
     JSON.parse(
         localStorage.getItem(
             "knownPoints"
         )
     ) || [];
+
 console.log(
     "Bekannte Punkte geladen:",
     knownPoints.length
