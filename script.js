@@ -26,6 +26,12 @@ let tours =
     JSON.parse(
         localStorage.getItem("tours")
     ) || [];
+let knownPoints =
+    JSON.parse(
+        localStorage.getItem(
+            "knownPoints"
+        )
+    ) || [];
 let savedRoutes =
     JSON.parse(
         localStorage.getItem("savedRoutes")
@@ -530,6 +536,23 @@ function splitRouteIntoSegments(
     }
 
     return segments;
+}
+function findKnownPoint(
+    lat,
+    lng
+) {
+
+    return knownPoints.find(
+        (point) =>
+
+            calculateDistance(
+                lat,
+                lng,
+                point.lat,
+                point.lng
+            ) <= 0.01
+    );
+
 }
 function smoothRoute(points) {
 
