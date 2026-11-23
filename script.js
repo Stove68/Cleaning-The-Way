@@ -26,17 +26,16 @@ let tours =
     JSON.parse(
         localStorage.getItem("tours")
     ) || [];
+let savedRoutes =
+    JSON.parse(
+        localStorage.getItem("savedRoutes")
+    ) || [];
 let knownPoints =
     JSON.parse(
         localStorage.getItem(
             "knownPoints"
         )
     ) || [];
-let savedRoutes =
-    JSON.parse(
-        localStorage.getItem("savedRoutes")
-    ) || [];
-
 const status = document.getElementById("status");
 const routeCount = document.getElementById("routeCount");
 const distanceCount = document.getElementById("distanceCount");
@@ -396,6 +395,23 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 
     return R * c;
 }
+function findKnownPoint(
+    lat,
+    lng
+) {
+
+    return knownPoints.find(
+        (point) =>
+
+            calculateDistance(
+                lat,
+                lng,
+                point.lat,
+                point.lng
+            ) <= 0.01
+    );
+
+}
 function isNearRoute(routeA, routeB) {
 
     if (
@@ -537,23 +553,7 @@ function splitRouteIntoSegments(
 
     return segments;
 }
-function findKnownPoint(
-    lat,
-    lng
-) {
 
-    return knownPoints.find(
-        (point) =>
-
-            calculateDistance(
-                lat,
-                lng,
-                point.lat,
-                point.lng
-            ) <= 0.01
-    );
-
-}
 function smoothRoute(points) {
 
     if (points.length < 3) {
@@ -719,7 +719,8 @@ document
         
         const routeDistance =
             getRouteLength(routePoints);
-
+let updatedPoints = 0;
+let newPoints = 0;
         totalDistance += routeDistance;
 tours.push({
 
@@ -731,7 +732,65 @@ tours.push({
    
 });
 isTracking = false; 
-        
+
+ routePoints.forEach(
+    ([lat, lng]) => {
+
+        const existingPoint =
+            findKnownPoint(
+                lat,
+                lng
+            );
+
+        if (existingPoint) {
+
+            existingPoint.lastCheck =
+                new Date().toISOString();
+
+            existingPoint.cleanCount++;
+
+            existingPoint.status =
+                "green";
+
+            updatedPoints++;
+
+        } else {
+
+            knownPoints.push({
+
+                id: Date.now() +
+                    Math.random(),
+
+                lat: lat,
+
+                lng: lng,
+
+                cleanCount: 1,
+
+                lastCheck:
+                    new Date().toISOString(),
+
+                status: "green"
+
+            });
+
+            newPoints++;
+
+        }
+
+    }
+);
+
+console.log(
+    "Bekannte Punkte:",
+    updatedPoints
+);
+
+console.log(
+    "Neue Punkte:",
+    newPoints
+);
+      
 let matchingRoute = null;
         
 const segments =
@@ -946,7 +1005,12 @@ localStorage.setItem(
     "savedRoutes",
     JSON.stringify(savedRoutes)
 );
-       
+ localStorage.setItem(
+    "knownPoints",
+    JSON.stringify(
+        knownPoints
+    )
+);      
         renderHistory();
         
         localStorage.setItem(
