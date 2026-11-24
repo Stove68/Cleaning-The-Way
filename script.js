@@ -910,6 +910,11 @@ savedRoutes.forEach((savedRoute) => {
     const pointMatches =
     countMatchingKnownPoints(
         routePoints
+        );
+        debug(
+    "PointMatches: " +
+    pointMatches
+
     );
     console.log(
         "Neue Segmente:",
@@ -963,7 +968,7 @@ savedRoutes.forEach((savedRoute) => {
     pointMatches
 );
    if (
-    pointMatches > 10
+    pointMatches >= 5
 ) {
 
     matchingRoute =
