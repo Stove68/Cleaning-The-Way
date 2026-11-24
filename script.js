@@ -65,6 +65,9 @@ function debug(text) {
         "<br>" +
         log.innerHTML;
 }
+debug(
+    "Debug-System gestartet"
+);
 const routeCount = document.getElementById("routeCount");
 const distanceCount = document.getElementById("distanceCount");
 const historyList =document.getElementById("historyList");
