@@ -427,7 +427,9 @@ function findKnownPoint(
     lat,
     lng
 ) {
-
+debug(
+        "Suche Punkt..."
+    );
     const result =
         knownPoints.find(
             (point) =>
@@ -445,13 +447,17 @@ function findKnownPoint(
         console.log(
             "Treffer gefunden"
         );
-
+  debug(
+        "Treffer gefunden"
+    );
     } else {
 
         console.log(
             "Kein Treffer"
         );
-
+ debug(
+        "Kein Treffer"
+    );
     }
 
     return result;
@@ -673,6 +679,9 @@ navigator.geolocation.getCurrentPosition(
 document
     .getElementById("startBtn")
     .addEventListener("click", () => {
+debug(
+    "Start gedrückt"
+);
 
         routePoints = [];
 isTracking = true;
@@ -756,7 +765,9 @@ console.log(
 document
     .getElementById("stopBtn")
     .addEventListener("click", () => {
-
+debug(
+    "Stop gedrückt"
+);
         if (!isTracking) {
             return;
         }
