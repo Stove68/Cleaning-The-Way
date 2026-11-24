@@ -847,7 +847,10 @@ console.log(
         existingPoint.cleanCount
     );
             updatedPoints++;
-
+debug(
+    "Aktualisiert: " +
+    updatedPoints
+);
         } else {
 
             knownPoints.push({
@@ -967,12 +970,23 @@ savedRoutes.forEach((savedRoute) => {
     "Punktquote:",
     pointMatches
 );
-   if (
-    pointMatches >= 5
+  if (
+    pointMatches > 0
 ) {
+
+    debug(
+        "Bestehender Weg erkannt: " +
+        pointMatches
+    );
 
     matchingRoute =
         savedRoute;
+
+} else {
+
+    debug(
+        "Neuer Weg"
+    );
 
 }
 
@@ -982,7 +996,10 @@ console.log(
     "Route erkannt:",
     matchingRoute !== null
 );
-
+debug(
+    "Route erkannt: " +
+    (matchingRoute !== null)
+);
 if (matchingRoute) {
 
     console.log(
