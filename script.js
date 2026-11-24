@@ -412,16 +412,33 @@ function findKnownPoint(
     lng
 ) {
 
-    return knownPoints.find(
-        (point) =>
+    const result =
+        knownPoints.find(
+            (point) =>
 
-            calculateDistance(
-                lat,
-                lng,
-                point.lat,
-                point.lng
-            ) <= 0.03
-    );
+                calculateDistance(
+                    lat,
+                    lng,
+                    point.lat,
+                    point.lng
+                ) <= 0.03
+        );
+
+    if (result) {
+
+        console.log(
+            "Treffer gefunden"
+        );
+
+    } else {
+
+        console.log(
+            "Kein Treffer"
+        );
+
+    }
+
+    return result;
 
 }
 function countMatchingKnownPoints(routePoints) {
@@ -785,10 +802,17 @@ isTracking = false;
                 new Date().toISOString();
 
             existingPoint.cleanCount++;
+console.log(
+    "Bekannter Punkt aktualisiert:",
+    existingPoint.cleanCount
+);
 
             existingPoint.status =
                 "green";
-
+console.log(
+        "Bekannter Punkt aktualisiert:",
+        existingPoint.cleanCount
+    );
             updatedPoints++;
 
         } else {
@@ -810,7 +834,12 @@ isTracking = false;
                 status: "green"
 
             });
-
+            
+ console.log(
+        "Neuer Punkt angelegt:",
+        lat,
+        lng
+    );
             newPoints++;
 
         }
@@ -979,13 +1008,13 @@ console.log(
     matchingRoute.distance =
         routeDistance;
 
-    matchingRoute.route =
-        [...routePoints];
+    // matchingRoute.route =
+//     [...routePoints];
 
-    matchingRoute.segments =
-        splitRouteIntoSegments(
-            routePoints
-        );
+// matchingRoute.segments =
+//     splitRouteIntoSegments(
+//         routePoints
+//     );
 
 } else {
     
