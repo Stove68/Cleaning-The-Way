@@ -883,9 +883,11 @@ savedRoutes.forEach((savedRoute) => {
         segments.length
 );
 
-    console.log(
-        "Gespeicherte Segmente:",
-        savedRoute.segments.length
+   console.log(
+    "Gespeicherte Segmente:",
+    savedRoute.segments
+        ? savedRoute.segments.length
+        : 0
 );
 
    console.log(
@@ -919,16 +921,14 @@ savedRoutes.forEach((savedRoute) => {
     );
 
     console.log(
-        "segmentMatches:",
-        segmentMatches
-    );
+    "pointMatches:",
+    pointMatches
+);
 
     console.log(
-        "Segmentquote:",
-        segmentMatches /
-        savedRoute.segments.length
-    );
-
+    "Punktquote:",
+    pointMatches
+);
    if (
     pointMatches > 10
 ) {
