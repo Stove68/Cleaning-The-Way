@@ -49,6 +49,22 @@ console.log(
     knownPoints.length
 );
 const status = document.getElementById("status");
+function debug(text) {
+
+    const log =
+        document.getElementById(
+            "debugLog"
+        );
+
+    if (!log) {
+        return;
+    }
+
+    log.innerHTML =
+        text +
+        "<br>" +
+        log.innerHTML;
+}
 const routeCount = document.getElementById("routeCount");
 const distanceCount = document.getElementById("distanceCount");
 const historyList =document.getElementById("historyList");
