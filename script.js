@@ -424,6 +424,28 @@ function findKnownPoint(
     );
 
 }
+function countMatchingKnownPoints(routePoints) {
+
+    let matches = 0;
+
+    routePoints.forEach(([lat, lng]) => {
+
+        const existingPoint =
+            findKnownPoint(
+                lat,
+                lng
+            );
+
+        if (existingPoint) {
+
+            matches++;
+
+        }
+
+    });
+
+    return matches;
+}
 function isNearRoute(routeA, routeB) {
 
     if (
@@ -823,11 +845,10 @@ savedRoutes.forEach((savedRoute) => {
             routePoints
         );
 
-    const segmentMatches =
-        countMatchingSegments(
-            savedRoute.segments || [],
-            segments
-        );
+    const pointMatches =
+    countMatchingKnownPoints(
+        routePoints
+    );
     console.log(
         "Neue Segmente:",
         segments.length
@@ -838,16 +859,14 @@ savedRoutes.forEach((savedRoute) => {
         savedRoute.segments.length
 );
 
-    console.log(
-        "SegmentMatches:",
-        segmentMatches
+   console.log(
+    "PointMatches:",
+    pointMatches
 );
     console.log(
-        "Treffer:",
-        segmentMatches,
-        "/",
-        savedRoute.segments.length
-    );
+    "Bekannte Punkte:",
+    pointMatches
+);
 
     console.log(
         "isSameRoute:",
@@ -881,14 +900,14 @@ savedRoutes.forEach((savedRoute) => {
         savedRoute.segments.length
     );
 
-    if (
-        segmentMatches > 0
-    ) {
+   if (
+    pointMatches > 10
+) {
 
-        matchingRoute =
-            savedRoute;
+    matchingRoute =
+        savedRoute;
 
-    }
+}
 
 });
 
@@ -936,11 +955,8 @@ status.innerText =
     
 status.innerHTML =
     "✅ Sammelaktion beendet<br>" +
-    "Treffer: " +
-    updatedSegments +
-    " / " +
-    matchingRoute.segments.length +
-    " Segmente";
+    "Bekannte Punkte erkannt: " +
+    updatedPoints;
 console.log(
     "Neue Segmente:",
     segments.length - updatedSegments
