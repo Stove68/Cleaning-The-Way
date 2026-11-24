@@ -469,7 +469,10 @@ debug(
 function countMatchingKnownPoints(routePoints) {
 
     let matches = 0;
-
+debug(
+    "Zu prüfende Punkte: " +
+    routePoints.length
+);
     routePoints.forEach(([lat, lng]) => {
 
         const existingPoint =
