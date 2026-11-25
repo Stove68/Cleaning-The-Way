@@ -1014,7 +1014,7 @@ let updatedSegments = 0;
 const matchedIndices = new Set();
 
 status.innerText =
-    "Segmentvergleich gestartet";
+    "Bekannte Wege werden geprüft";
 
 segments.forEach((newSegment) => {
 
@@ -1039,7 +1039,7 @@ segments.forEach((newSegment) => {
 
 });
 status.innerText =
-    "Segmentvergleich fertig";
+    "Prüfung abgeschlossen";
     
 status.innerHTML =
     "✅ Sammelaktion beendet<br>" +
