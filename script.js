@@ -1056,8 +1056,8 @@ matchingRoute.date =
     matchingRoute.distance =
         routeDistance;
 
-    // matchingRoute.route =
-//     [...routePoints];
+   matchingRoute.route =
+    [...routePoints];
 
 // matchingRoute.segments =
 //     splitRouteIntoSegments(
