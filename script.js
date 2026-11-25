@@ -1039,14 +1039,13 @@ segments.forEach((newSegment) => {
 status.innerText =
     "Prüfung abgeschlossen";
     
-status.innerHTML =
-    "✅ Sammelaktion beendet";
+status.innerHTML = "✅ Sammelaktion beendet";
 
 matchingRoute.date =
     new Date().toLocaleDateString();
 
     matchingRoute.time =
-        new Date().toLocaleTimeString();
+    new Date().toLocaleTimeString();
 
     matchingRoute.isoDate =
         new Date().toISOString();
