@@ -1040,9 +1040,10 @@ status.innerText =
     "Prüfung abgeschlossen";
     
 status.innerHTML =
-    "✅ Sammelaktion beendet<br>" +
-    matchingRoute.date =
-        new Date().toLocaleDateString();
+    "✅ Sammelaktion beendet";
+
+matchingRoute.date =
+    new Date().toLocaleDateString();
 
     matchingRoute.time =
         new Date().toLocaleTimeString();
