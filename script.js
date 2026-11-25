@@ -996,13 +996,14 @@ debug(
     (matchingRoute !== null)
 );
 
+   debug(
     "Bekannte Punkte erkannt: " +
-    updatedPoints;
-
+    updatedPoints
+);
+        
+if (matchingRoute) {
     matchingRoute.cleanCount =
         (matchingRoute.cleanCount || 1) + 1;
-if (matchingRoute) {
-
     console.log(
         "Bestehender Weg wird aktualisiert"
     );
