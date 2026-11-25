@@ -1008,6 +1008,10 @@ debug(
 );
         
 if (matchingRoute) {
+    alert(
+    "Route-Punkte vorher: " +
+    matchingRoute.route.length
+);
     matchingRoute.cleanCount =
         (matchingRoute.cleanCount || 1) + 1;
     console.log(
@@ -1064,7 +1068,10 @@ matchingRoute.date =
 
    matchingRoute.route =
     [...routePoints];
-
+alert(
+    "Route-Punkte nachher: " +
+    matchingRoute.route.length
+);
 // matchingRoute.segments =
 //     splitRouteIntoSegments(
 //         routePoints
