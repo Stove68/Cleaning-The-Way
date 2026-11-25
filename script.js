@@ -195,11 +195,6 @@ if (ageInHours >= 24) {
                 
                "<br>Uhrzeit: " +
                 (savedRoute.time || "-")
-
-                + "<br>Segmente: " +
-                (savedRoute.segments
-                ? savedRoute.segments.length
-                : 0)
             );
         }
     });
@@ -1000,6 +995,15 @@ debug(
     "Route erkannt: " +
     (matchingRoute !== null)
 );
+
+    "Bekannte Punkte erkannt: " +
+    updatedPoints;
+console.log(
+    "Neue Segmente:",
+    segments.length - updatedSegments
+);
+    matchingRoute.cleanCount =
+        (matchingRoute.cleanCount || 1) + 1;
 if (matchingRoute) {
 
     console.log(
@@ -1039,15 +1043,6 @@ status.innerText =
     
 status.innerHTML =
     "✅ Sammelaktion beendet<br>" +
-    "Bekannte Punkte erkannt: " +
-    updatedPoints;
-console.log(
-    "Neue Segmente:",
-    segments.length - updatedSegments
-);
-    matchingRoute.cleanCount =
-        (matchingRoute.cleanCount || 1) + 1;
-
     matchingRoute.date =
         new Date().toLocaleDateString();
 
