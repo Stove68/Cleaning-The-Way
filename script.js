@@ -37,6 +37,12 @@ console.log(
 console.log(
     savedRoutes
 );
+console.log(
+    "Route Länge geladen:",
+    savedRoutes[0]
+        ? savedRoutes[0].route.length
+        : 0
+);
 let knownPoints =
     JSON.parse(
         localStorage.getItem(
@@ -1111,6 +1117,12 @@ console.log(
 localStorage.setItem(
     "tours",
     JSON.stringify(tours)
+);
+        console.log(
+    "Route Länge vor Speichern:",
+    matchingRoute
+        ? matchingRoute.route.length
+        : "neu"
 );
         localStorage.setItem(
     "savedRoutes",
