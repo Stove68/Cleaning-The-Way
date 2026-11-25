@@ -998,10 +998,7 @@ debug(
 
     "Bekannte Punkte erkannt: " +
     updatedPoints;
-console.log(
-    "Neue Segmente:",
-    segments.length - updatedSegments
-);
+
     matchingRoute.cleanCount =
         (matchingRoute.cleanCount || 1) + 1;
 if (matchingRoute) {
