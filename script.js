@@ -1006,7 +1006,10 @@ debug(
     "Bekannte Punkte erkannt: " +
     updatedPoints
 );
-        
+ alert(
+    "matchingRoute = " +
+    (matchingRoute !== null)
+);       
 if (matchingRoute) {
     alert(
     "Route-Punkte vorher: " +
