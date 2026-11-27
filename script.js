@@ -819,9 +819,9 @@ tours.push({
         routeDistance
    
 });
-(isTracking = false; 
+isTracking = false; 
 
- routePoints.forEach
+ routePoints.forEach(
     ([lat, lng]) => {
 
         const existingPoint =
