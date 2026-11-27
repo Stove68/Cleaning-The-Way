@@ -986,7 +986,13 @@ savedRoutes.forEach((savedRoute) => {
 
     matchingRoute =
         savedRoute;
-
+     
+console.log(
+    "Neue beste Route:",
+    bestMatchCount,
+    savedRoute.date,
+    savedRoute.time
+);
 }
 });
 
