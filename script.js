@@ -995,7 +995,7 @@ console.log(
     matchingRoute !== null
 );
 
-if (bestMatchCount < 5) {
+if (bestMatchCount < 3) {
     matchingRoute = null;
 }
 
