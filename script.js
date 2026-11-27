@@ -915,6 +915,12 @@ savedRoutes.forEach((savedRoute) => {
     countMatchingKnownPoints(
         routePoints
         );
+    
+    debug(
+    "Treffer Route: " +
+    pointMatches
+    );
+
         debug(
     "PointMatches: " +
     pointMatches
@@ -996,6 +1002,12 @@ console.log(
     "Route erkannt:",
     matchingRoute !== null
 );
+
+debug(
+    "Bester Treffer: " +
+    bestMatchCount
+);
+
 debug(
     "Route erkannt: " +
     (matchingRoute !== null)
