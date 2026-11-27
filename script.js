@@ -988,14 +988,6 @@ savedRoutes.forEach((savedRoute) => {
         savedRoute;
 
 }
-} else {
-
-    debug(
-        "Neuer Weg"
-    );
-
-}
-
 });
 
 console.log(
