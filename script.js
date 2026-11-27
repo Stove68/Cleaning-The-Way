@@ -819,9 +819,9 @@ tours.push({
         routeDistance
    
 });
-isTracking = false; 
+(isTracking = false; 
 
- routePoints.forEach(
+ routePoints.forEach
     ([lat, lng]) => {
 
         const existingPoint =
@@ -895,7 +895,7 @@ console.log(
 );
       
 let matchingRoute = null;
-        
+  let bestMatchCount = 0;      
 const segments =
     splitRouteIntoSegments(
         routePoints
@@ -971,18 +971,17 @@ savedRoutes.forEach((savedRoute) => {
     "Punktquote:",
     pointMatches
 );
-  if (
-    pointMatches > 0
+ if (
+    pointMatches > bestMatchCount
 ) {
 
-    debug(
-        "Bestehender Weg erkannt: " +
-        pointMatches
-    );
+    bestMatchCount =
+        pointMatches;
 
     matchingRoute =
         savedRoute;
 
+}
 } else {
 
     debug(
