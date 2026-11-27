@@ -1003,6 +1003,10 @@ console.log(
     matchingRoute !== null
 );
 
+if (bestMatchCount < 5) {
+    matchingRoute = null;
+}
+
 debug(
     "Bester Treffer: " +
     bestMatchCount
