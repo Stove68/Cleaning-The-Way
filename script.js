@@ -1115,9 +1115,7 @@ const segments =
     splitRouteIntoSegments(
         routePoints
     );
-debug(
-    "Neue Sammelaktion gespeichert"
-);      
+     
 savedRoutes.push({
 
     date:
@@ -1145,11 +1143,6 @@ savedRoutes.push({
         [...routePoints]
 
 });
-    
- debug(
-        "Historie: " +
-        savedRoutes.length
-    );
  }
         /*
 console.log(
