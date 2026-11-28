@@ -1036,7 +1036,8 @@ if (matchingRoute) {
 
 status.innerText =
     "Bekannte Wege werden geprüft";
-
+    
+/*
 segments.forEach((newSegment) => {
 
     matchingRoute.segments.forEach(
@@ -1059,6 +1060,8 @@ segments.forEach((newSegment) => {
     );
 
 });
+*/
+    
 status.innerText =
     "Prüfung abgeschlossen";
     
