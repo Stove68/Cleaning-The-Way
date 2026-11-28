@@ -903,6 +903,11 @@ const segments =
      status.innerText =
     "Segmente erzeugt";
         
+ debug(
+    "Gespeicherte Routen: " +
+    savedRoutes.length
+);
+        
 savedRoutes.forEach((savedRoute) => {
 
     const overlap =
@@ -1001,7 +1006,7 @@ console.log(
     matchingRoute !== null
 );
 
-if (bestMatchCount < 3) {
+if (bestMatchCount < 10) {
     matchingRoute = null;
 }
 
@@ -1110,7 +1115,9 @@ const segments =
     splitRouteIntoSegments(
         routePoints
     );
-      
+debug(
+    "Neue Sammelaktion gespeichert"
+);      
 savedRoutes.push({
 
     date:
@@ -1138,7 +1145,11 @@ savedRoutes.push({
         [...routePoints]
 
 });
-
+ debug(
+        "Historie: " +
+        savedRoutes.length
+    );
+ }   
 console.log(
     "Segmente:",
     segments.length
