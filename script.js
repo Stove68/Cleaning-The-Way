@@ -1087,8 +1087,8 @@ matchingRoute.date =
     matchingRoute.route.length
 );
 
-   matchingRoute.route =
-    [...routePoints];
+  // matchingRoute.route =
+//     [...routePoints];
     
     debug(
     "Neue Route: " +
