@@ -1157,7 +1157,7 @@ console.log(
     segments.length
 );
 */
-
+// }
 console.log(
     "Punkte vor dem Speichern:",
     knownPoints.length
