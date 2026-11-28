@@ -1145,16 +1145,19 @@ savedRoutes.push({
         [...routePoints]
 
 });
+    
  debug(
         "Historie: " +
         savedRoutes.length
     );
- }   
+ }
+        /*
 console.log(
     "Segmente:",
     segments.length
 );
-}
+*/
+
 console.log(
     "Punkte vor dem Speichern:",
     knownPoints.length
