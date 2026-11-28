@@ -1034,9 +1034,6 @@ if (matchingRoute) {
         "Bestehender Weg wird aktualisiert"
     );
 
-let updatedSegments = 0;
-const matchedIndices = new Set();
-
 status.innerText =
     "Bekannte Wege werden geprüft";
 
