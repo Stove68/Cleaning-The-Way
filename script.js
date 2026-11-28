@@ -1081,9 +1081,20 @@ matchingRoute.date =
 
     matchingRoute.distance =
         routeDistance;
+    
+    debug(
+    "Alte Route: " +
+    matchingRoute.route.length
+);
 
    matchingRoute.route =
     [...routePoints];
+    
+    debug(
+    "Neue Route: " +
+    matchingRoute.route.length
+);
+    
 alert(
     "Route-Punkte nachher: " +
     matchingRoute.route.length
